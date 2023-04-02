@@ -1,0 +1,29 @@
+<?xml version="1.0"?>
+<!--
+/**
+ * @author Kim Phung - BURO210
+ * @copyright Copyright © 2023 BURO210. All rights reserved.
+ */
+-->
+<page xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+      xsi:noNamespaceSchemaLocation="urn:magento:framework:View/Layout/etc/page_configuration.xsd">
+    <body>
+        <referenceContainer name="cart.summary">
+            <container name="shipping-notice-container" htmlTag="div" htmlClass="shipping-notice-container">
+                <block name="shipping-notice" template="Juno_Theme::shipping-notice.phtml"/>
+            </container>
+            <container name="store-info-container" htmlTag="div" htmlId="store-info-container" after="-">
+                <block name="store-hours" template="Juno_Theme::store-hours.phtml" ifconfig="general/store_information/hours">
+                    <arguments>
+                        <argument name="store_hours_view_model" xsi:type="object">Juno\Theme\ViewModel\StoreHours</argument>
+                    </arguments>
+                </block>
+                <block name="store-number" template="Juno_Theme::phone-number.phtml" ifconfig="general/store_information/phone">
+                    <arguments>
+                        <argument name="phone_number_view_model" xsi:type="object">Juno\Theme\ViewModel\PhoneNumber</argument>
+                    </arguments>
+              </block>
+            </container>
+        </referenceContainer>
+    </body>
+</page>

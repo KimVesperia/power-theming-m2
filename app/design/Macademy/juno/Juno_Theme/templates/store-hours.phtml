@@ -1,0 +1,10 @@
+<?php
+/** @var $block Magento\Framework\View\Element\Template */
+/** @var $escaper Magento\Framework\Escaper */
+/** @var $storeHoursViewModel Juno\Theme\ViewModel\StoreHours */
+$storeHoursViewModel = $block->getData('store_hours_view_model');
+?>
+
+<div class="store-hours">
+   <?= __('Store Hours: %1', $escaper->escapeHtml($storeHoursViewModel->getStoreHours())); ?>
+</div>
